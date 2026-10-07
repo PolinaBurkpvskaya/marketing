@@ -1762,7 +1762,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-03 .заглавие > * { margin: 0; }
   #экран-03 .отчёт-кикер { font: 600 var(--кегль-кикер)/1.2 var(--шрифт-текста); letter-spacing: var(--разрядка-кикера); }
   #экран-03 .заглавие .лид { max-width: 38rem; }
-  #экран-03 .подсказка { font-size: var(--кегль-мелкий); line-height: 1.4; color: color-mix(in srgb, currentColor 70%, transparent); }
+  #экран-03 .подсказка { font-size: var(--кегль-текст); line-height: 1.4; color: color-mix(in srgb, currentColor 70%, transparent); }
   #экран-03 .верх { display: flex; justify-content: space-between; align-items: flex-end; gap: 24px; }
   #экран-03 .управление { display: flex; align-items: center; gap: 16px; flex: none; margin-bottom: clamp(24px, 3vw, 40px); }
   #экран-03 .счётчик { font: 600 var(--кегль-мелкий)/1 var(--шрифт-текста); letter-spacing: .06em; font-variant-numeric: tabular-nums;
@@ -1829,6 +1829,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-04.тёмный .итог { background: var(--цвет-тёмный-фон-2); border-left-color: var(--цвет-тёплый); }
   #экран-04 .сноска { margin: 12px 0 0; font-size: var(--кегль-мелкий); line-height: 1.4; color: color-mix(in srgb, currentColor 82%, transparent); }
   #экран-04 .сноска a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+  #экран-04 .кнопка--главная { border-radius: 9em; }
   @media (max-width: 899px) {
     #экран-04 .разворот { grid-template-columns: minmax(0, 1fr); }
     #экран-04 .кадр { position: static; max-width: 340px; margin-inline: auto; aspect-ratio: 474 / 590; overflow: hidden; }
@@ -1880,7 +1881,12 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-06 .лента::-webkit-scrollbar { display: none; }
   #экран-06 .отзыв { flex: 0 0 calc((100% - 2 * 24px) / 3); scroll-snap-align: start; margin: 0; display: grid; gap: 14px; }
   #экран-06 .скрин { margin: 0; border-radius: var(--радиус-карточки); overflow: hidden; box-shadow: var(--тень); }
-  #экран-06 .скрин img { display: block; width: 100%; height: auto; aspect-ratio: auto; object-fit: contain; }
+  #экран-06 .скрин img { display: block; width: 100%; height: auto; object-fit: contain; }
+  #экран-06 .отзыв:nth-child(1) .скрин img { aspect-ratio: 720 / 753; }
+  #экран-06 .отзыв:nth-child(2) .скрин img { aspect-ratio: 591 / 1110; }
+  #экран-06 .отзыв:nth-child(3) .скрин img { aspect-ratio: 720 / 1193; }
+  #экран-06 .отзыв:nth-child(4) .скрин img { aspect-ratio: 591 / 760; }
+  #экран-06 .отзыв:nth-child(5) .скрин img { aspect-ratio: 720 / 822; }
   #экран-06 .кто { display: grid; gap: 2px; padding-left: 14px; border-left: 3px solid transparent; }
   #экран-06 .кто b { font-size: var(--кегль-текст); line-height: 1.3; }
   #экран-06 .кто span { font-size: var(--кегль-мелкий); line-height: 1.35; color: color-mix(in srgb, currentColor 70%, transparent); }
@@ -1918,7 +1924,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-07 .приглашение .текст { font-size: var(--кегль-текст); line-height: 1.55; color: color-mix(in srgb, currentColor 80%, transparent); }
   #экран-07 .сноска { font-size: var(--кегль-мелкий); line-height: 1.4; color: color-mix(in srgb, currentColor 82%, transparent); }
   #экран-07 .сноска a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
-  #экран-07 .низ { margin: clamp(40px, 6vw, 80px) 0 0; padding-top: 18px; border-top: var(--нить) solid; font-size: var(--кегль-мелкий); line-height: 1.4; }
+  #экран-07 .низ { margin: clamp(40px, 6vw, 80px) 0 0; padding-top: 18px; border-top: var(--нить) solid; font-size: var(--кегль-текст); line-height: 1.4; }
   #экран-07.светлый .отчёт-кикер { color: var(--цвет-акцент); }
   #экран-07.тёмный .отчёт-кикер { color: var(--цвет-тёплый); }
   #экран-07.светлый .линия { background: var(--цвет-акцент); }
@@ -1929,6 +1935,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-07.тёмный .приглашение { background: var(--цвет-тёмный-фон-2); border-left-color: var(--цвет-тёплый); }
   #экран-07.светлый .низ { border-top-color: var(--цвет-линия); color: var(--цвет-текст-мягкий); }
   #экран-07.тёмный .низ { border-top-color: var(--цвет-тёмный-фон-4); color: var(--цвет-тёплый-мягкий); }
+  #экран-07 .кнопка--главная { border-radius: 9em; }
   @media (max-width: 899px) {
     #экран-07 .разворот { grid-template-columns: minmax(0, 1fr); gap: 32px; }
     #экран-07 .приглашение { padding: 22px 20px; }
