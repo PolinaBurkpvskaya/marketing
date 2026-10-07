@@ -6,6 +6,7 @@
 <title>Сайт собирается</title>
 <meta name="description" content="">
 <meta name="robots" content="noindex, nofollow">
+<link rel="canonical" href="https://polinaburkpvskaya.github.io/marketing/">
 <meta property="og:title" content="Сайт собирается">
 <meta property="og:description" content="">
 <meta property="og:type" content="website">
@@ -14,6 +15,7 @@
   "@context": "https://schema.org",
   "@type": "Person",
   "name": "Полина Бурковская",
+  "@id": "https://polinaburkpvskaya.github.io/marketing/#person",
   "alternateName": [
     "Polina Burkovskaya",
     "Бурковская Полина Леонидовна",
@@ -22,6 +24,7 @@
   ],
   "jobTitle": "Маркетолог онлайн-школ",
   "description": "Полина Бурковская — маркетолог онлайн-школ. С 2018 года помогает экспертам и школам расти без потери рентабельности: в Академии Интернет Профессий выручка выросла с 7 до 30–35 млн в месяц. Сейчас занимается запусками в онлайн-школе DIVA.",
+  "url": "https://polinaburkpvskaya.github.io/marketing/",
   "sameAs": [
     "https://t.me/polinaburkovskayaa"
   ]
@@ -152,21 +155,23 @@
 .первый-экран--свой .первый-экран__действие .кнопка { --цвет-кнопки: var(--цвет-тёмный-фон); --цвет-на-кнопке: var(--цвет-фон); flex: 1; justify-content: center; white-space: nowrap;
   font-size: clamp(19px, 1.55vw, 24px); font-weight: 700; padding: 1.25em 2.4em; border-radius: 999px; min-height: 0; }
 @media (max-width: 899px) {
-  .первый-экран--свой { padding-top: 124px !important; padding-bottom: 0 !important; }
-  .первый-экран--свой .шапка { left: 20px; top: 28px; }
-  .первый-экран--свой .шапка__лого { gap: 6px; }
+  /* Правило Полины: на телефоне весь первый экран — имя, заголовок, пояснение, кнопка и фото — в одном экране без прокрутки.
+     Высота секции = высота окна; отступы — доли высоты окна; фото забирает всё, что осталось, и не обрезается. */
+  .первый-экран--свой { height: 100svh; min-height: 0; padding: calc(56px + 4.5svh) 0 0 !important; display: flex; flex-direction: column; }
+  .первый-экран--свой .шапка { left: 20px; top: 2.6svh; }
+  .первый-экран--свой .шапка__лого { gap: 4px; }
   .первый-экран--свой .шапка__лого b { font-size: 17px; }
   .первый-экран--свой .шапка__роль { font-size: 13px; letter-spacing: .03em; }
-  .первый-экран--свой .свой__сетка { display: flex; flex-direction: column; min-height: 0; }
-  .первый-экран--свой .свой__текст { order: -1; padding: 0 20px; gap: 36px; }
-  .первый-экран--свой h1 { font-size: 31px; }
-  .первый-экран--свой .лид { font-size: 18px; }
+  .первый-экран--свой .свой__сетка { flex: 1; min-height: 0; display: flex; flex-direction: column; }
+  .первый-экран--свой .свой__текст { order: -1; flex: none; padding: 0 20px; gap: clamp(12px, 2.6svh, 26px); }
+  .первый-экран--свой h1 { font-size: clamp(26px, 4.4svh, 34px); }
+  .первый-экран--свой .лид { font-size: clamp(16px, 2.4svh, 19px); line-height: 1.4; }
+  .первый-экран--свой .первый-экран__действие .кнопка { padding: clamp(.75em, 1.9svh, 1.1em) 1.6em; font-size: 18px; }
   .первый-экран--свой .свой__перенос { display: none; }
-  /* фото целиком, без обрезки: высота кадра по самой картинке, а не по окну */
-  .первый-экран--свой .свой__кадр { height: auto; margin-top: 56px; display: flex; justify-content: center; }
-  .первый-экран--свой .свой__кадр::before { width: 80%; height: 74%; }
-  .первый-экран--свой .свой__кадр picture { display: flex; justify-content: center; width: 100%; position: relative; z-index: 1; }
-  .первый-экран--свой .свой__кадр img { position: static; transform: none; height: auto; width: 78%; max-width: 78%; }
+  .первый-экран--свой .свой__кадр { flex: 1; min-height: 0; height: auto; margin-top: clamp(14px, 3svh, 30px); display: flex; justify-content: center; }
+  .первый-экран--свой .свой__кадр::before { width: 78%; height: 78%; }
+  .первый-экран--свой .свой__кадр picture { display: flex; justify-content: center; align-items: flex-end; width: 100%; height: 100%; position: relative; z-index: 1; }
+  .первый-экран--свой .свой__кадр img { position: static; transform: none; height: 100%; width: auto; max-width: 92%; object-fit: contain; object-position: 50% 100%; }
 }
 </style>
 <div class="липкая-кнопка"><a class="кнопка кнопка--главная" href="https://t.me/polinaburkovskayaa">Обсудить вашу школу</a></div>
