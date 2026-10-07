@@ -201,7 +201,7 @@
   </header>
   <div class="заглавие-таблицы" aria-hidden="true"><span>Школа</span><span>Было</span><span>Стало</span></div>
   <ul class="таблица">
-      <li class="первая">
+      <li>
         <div class="школа"><b>Академия Интернет Профессий Марии Солодар</b><span class="метка">Ниша: удалённые профессии</span></div>
         <div class="было"><span class="колонка">Было</span><p>выручка <b>7 млн</b> в&nbsp;месяц</p><p>отрицательная рентабельность</p><p>автоворонки с&nbsp;ROMI минус&nbsp;150&#8288;–&#8288;200%</p></div>
         <div class="стало"><span class="колонка">Стало</span><p>выручка <b>30&#8288;–&#8288;35 млн</b> в&nbsp;месяц</p><p>положительная рентабельность</p><p>автоворонки с&nbsp;ROMI 200%+</p></div>
@@ -249,7 +249,7 @@
   </ul>
 </div>
 </section>
-<section class="блок блок--что-получите светлый второй" id="экран-04" data-тип="что-получите" data-вёрстка="своя"><div class="стык стык--верх" aria-hidden="true" style="--стык-сосед: var(--цвет-фон)"></div>
+<section class="блок блок--что-получите светлый второй" id="экран-04" data-тип="что-получите" data-вёрстка="своя"><div class="стык стык--верх" aria-hidden="true" style="--стык-сосед: var(--цвет-фон)"></div><div class="стык стык--низ" aria-hidden="true" style="--стык-сосед: var(--цвет-фон)"></div>
 <div class="блок__внутри">
   <div class="разворот">
     <figure class="фото кадр"><img src="img/polina-rost-vyrez.webp" alt="Полина Бурковская в белом костюме, в полный рост" loading="lazy" decoding="async"></figure>
@@ -271,6 +271,61 @@
     </div>
   </div>
 </div>
+</section>
+<section class="блок блок--отзывы светлый" id="экран-06" data-тип="отзывы" data-вёрстка="своя"><div class="стык стык--верх" aria-hidden="true" style="--стык-сосед: var(--цвет-фон-2, var(--цвет-фон))"></div>
+<div class="блок__внутри">
+  <div class="верх">
+    <header class="заглавие">
+      <p class="отчёт-кикер">Отзывы</p>
+      <h2>Что&nbsp;говорят те, с&nbsp;кем&nbsp;я&nbsp;работала</h2>
+      <p class="лид">Скриншоты переписки&nbsp;— как&nbsp;есть, без&nbsp;правок</p>
+    </header>
+    <div class="стрелки">
+      <button class="стрелка" type="button" data-куда="-1" aria-label="Предыдущий отзыв">←</button>
+      <button class="стрелка" type="button" data-куда="1" aria-label="Следующий отзыв">→</button>
+    </div>
+  </div>
+  <ul class="лента" aria-label="Отзывы, листаются вбок">
+    <li class="отзыв">
+      <figure class="фото скрин"><img src="img/otzyv-1-laptev.webp" width="720" height="905" alt="Отзыв Никиты Лаптева в переписке: восемь месяцев работы, наладили процессы в онлайн-школах и подняли доходы в два раза" loading="lazy" decoding="async"></figure>
+      <p class="кто"><b>Никита Лаптев</b><span>переписка во&nbsp;ВКонтакте</span></p>
+    </li>
+    <li class="отзыв">
+      <figure class="фото скрин"><img src="img/otzyv-2-kudryavcev.webp" width="591" height="1110" alt="Отзыв Артура Кудрявцева в Telegram: трафик и воронки, ROI на уровне 200%" loading="lazy" decoding="async"></figure>
+      <p class="кто"><b>Артур Кудрявцев</b><span>переписка в&nbsp;Telegram</span></p>
+    </li>
+    <li class="отзыв">
+      <figure class="фото скрин"><img src="img/otzyv-3-jane.webp" width="720" height="1193" alt="Отзыв Jane, заказчика из США, в WhatsApp: выстроила процессы и подняла проект с нуля" loading="lazy" decoding="async"></figure>
+      <p class="кто"><b>Jane, заказчик из&nbsp;США</b><span>переписка в&nbsp;WhatsApp</span></p>
+    </li>
+    <li class="отзыв">
+      <figure class="фото скрин"><img src="img/otzyv-4-burmistrov.webp" width="591" height="760" alt="Отзыв Андрея Бурмистрова в Telegram: система отчётности и «слепые зоны» в отделе маркетинга" loading="lazy" decoding="async"></figure>
+      <p class="кто"><b>Андрей Бурмистров</b><span>переписка в&nbsp;Telegram</span></p>
+    </li>
+    <li class="отзыв">
+      <figure class="фото скрин"><img src="img/otzyv-5-aneka.webp" width="720" height="822" alt="Сообщения Анёки Айтимовой в чате проекта: «Полина — наш человек. Идём делать миллионы!»" loading="lazy" decoding="async"></figure>
+      <p class="кто"><b>Анёка Айтимова</b><span>чат проекта в&nbsp;WhatsApp</span></p>
+    </li>
+  </ul>
+</div>
+<script>
+(() => {
+  const экран = document.getElementById('экран-06');
+  const лента = экран.querySelector('.лента');
+  const [назад, вперёд] = экран.querySelectorAll('.стрелка');
+  const шаг = () => (лента.firstElementChild?.getBoundingClientRect().width || 300) + parseFloat(getComputedStyle(лента).columnGap) || 0;
+  const края = () => {
+    назад.disabled = лента.scrollLeft < 4;
+    вперёд.disabled = лента.scrollLeft + лента.clientWidth > лента.scrollWidth - 4;
+  };
+  экран.querySelectorAll('.стрелка').forEach(к => к.addEventListener('click', () => {
+    лента.scrollBy({ left: шаг() * Number(к.dataset.куда), behavior: 'smooth' });
+  }));
+  лента.addEventListener('scroll', края, { passive: true });
+  window.addEventListener('resize', края);
+  края();
+})();
+</script>
 </section>
 <div class="липкая-кнопка"><a class="кнопка кнопка--главная" href="https://t.me/polinaburkovskayaa">Обсудить вашу школу</a></div>
 <script>
