@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Сайт собирается</title>
+<meta name="description" content="">
+<meta name="robots" content="noindex, nofollow">
+<meta property="og:title" content="Сайт собирается">
+<meta property="og:description" content="">
+<meta property="og:type" content="website">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Полина Бурковская",
+  "alternateName": [
+    "Polina Burkovskaya",
+    "Бурковская Полина Леонидовна",
+    "Полина Гаврилова (фамилия до 2025 года)",
+    "Polina Gavrilova"
+  ],
+  "jobTitle": "Маркетолог онлайн-школ",
+  "description": "Полина Бурковская — маркетолог онлайн-школ. С 2018 года помогает экспертам и школам расти без потери рентабельности: в Академии Интернет Профессий выручка выросла с 7 до 30–35 млн в месяц. Сейчас занимается запусками в онлайн-школе DIVA.",
+  "sameAs": [
+    "https://t.me/polinaburkovskayaa"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&display=swap">
+<link rel="stylesheet" href="style.css">
+<style>
+:root {
+  --шрифт-заголовков: Montserrat, system-ui, sans-serif;
+  --шрифт-текста: Montserrat, -apple-system, 'Segoe UI', sans-serif;
+  --цвет-фон: #F6F1E9;  --цвет-фон-2: #EDE5D8;  --цвет-фон-карточки: #FBF8F3;
+  --цвет-текст: #2E2A26;  --цвет-текст-мягкий: #6B625A;  --цвет-текст-тихий: #766C63;
+  --цвет-акцент: #7A5C3E;  --цвет-акцент-тёмный: #5E4630;  --цвет-акцент-яркий: #B48F6A;  --цвет-акцент-глубже: #7F6042;  --цвет-акцент-маркер: #926E4A;
+  --цвет-на-акценте: #F6F1E9;  --цвет-линия: #DDD3C3;
+  --цвет-тёмный-фон: #2B2420;  --цвет-тёмный-фон-2: #352C27;  --цвет-тёмный-текст: #F6F1E9;  --цвет-тёмный-фон-3: #2F2723;  --цвет-тёмный-фон-4: #332A25;
+  --цвет-тёплый: #B89B72;  --цвет-тёплый-мягкий: #D8C7AC;
+  --цвет-стекло: color-mix(in srgb, #2B2420 86%, transparent);
+  --тень: 0 12px 34px color-mix(in srgb, #2B2420 6%, transparent);
+  --тень-чип: 0 10px 30px color-mix(in srgb, #2B2420 12%, transparent);
+  --тень-глубокая: 0 24px 60px color-mix(in srgb, #2B2420 35%, transparent);
+  --тень-спутник: 0 30px 60px color-mix(in srgb, #2B2420 70%, transparent);
+  --тень-плиты: 0 40px 100px color-mix(in srgb, #2B2420 70%, transparent);
+  --кегль-h1: 33px;  --кегль-h2: clamp(28px, 4.5vw, 44px);
+  --кегль-текст: clamp(17px, 1.15vw, 19px);  --кегль-лид: clamp(19px, 1.5vw, 23px);
+  --кегль-мелкий: 15px;  --кегль-кикер: clamp(16px, 1.3vw, 19px);
+  --кегль-цифра: 30px;  --разрядка-кикера: .06em;
+  --отступ-секции: clamp(56px, 9vw, 120px);  --отступ-блока: clamp(16px, 2vw, 28px);
+  --отступ-секции-тихо: clamp(44px, 7vw, 94px);  --отступ-секции-громко: clamp(64px, 10.5vw, 140px);
+  --ширина: 1120px;  --ширина-колонки: 560px;  --радиус: 16px;  --радиус-малый: 8px;
+  --радиус-карточки: 18px;  --радиус-плитки: 22px;  --радиус-телефон: 46px;  --кнопка-радиус: 14px;
+  --радиус-модуля: 16px;  --нить: 2px;
+  --плавность: cubic-bezier(.2, .7, .2, 1);  --длительность: .25s;
+  --цвет-тёплый-тёмный: #826842;
+}
+@media (min-width: 900px) {
+  :root { --кегль-h1: clamp(44px, 4vw, 58px); }
+}
+:root, .светлый { --цвет-кнопки: #7A5C3E; --цвет-на-кнопке: #F6F1E9; --цвет-кнопки-навёл: var(--цвет-акцент-тёмный); }
+.тёмный { --цвет-кнопки: #B48F6A; --цвет-на-кнопке: #2B2420; --цвет-кнопки-навёл: #C2A385; }
+
+</style>
+<script>
+(function () {
+  var ЭТАЛОН = 0.535;                  // очко Open Sans — текстовой гарнитуры утверждённых макетов
+  var ПОТОЛОК = 1.2, МЁРТВАЯ = 0.02;   // выше потолка расползается раскладка; ближе к единице не трогаем вовсе
+  var КОМПЬЮТЕР = "(min-width: 900px)";
+  var ТОКЕНЫ = ["--кегль-текст", "--кегль-лид", "--кегль-мелкий", "--кегль-кикер"];
+  var корень = document.documentElement;
+  var холст = document.createElement("canvas").getContext("2d");
+  var ждём = 0;
+
+  function мера(буква) { var м = холст.measureText(буква); return (м && м.actualBoundingBoxAscent) || 0; }
+
+  function применить() {
+    ждём = 0;
+    if (!холст) { return; }
+
+    for (var i = 0; i < ТОКЕНЫ.length; i++) { корень.style.removeProperty(ТОКЕНЫ[i]); }
+    var стиль = getComputedStyle(корень), стек = стиль.getPropertyValue("--шрифт-текста").trim();
+    if (!стек) { return; }
+    холст.font = "400 100px " + стек;
+
+    var очко = Math.max(мера("х"), мера("x")) / 100;
+    if (!(очко > 0)) { return; }
+    var k = Math.round(Math.min(ПОТОЛОК, Math.max(1, ЭТАЛОН / очко)) * 1000) / 1000;
+    if (k - 1 < МЁРТВАЯ || !matchMedia(КОМПЬЮТЕР).matches) { k = 1; }
+    корень.setAttribute("data-очко", очко.toFixed(3));      // чтобы проверка могла сказать числа вслух
+    корень.setAttribute("data-поправка", k.toFixed(3));
+    if (k === 1) { return; }
+    for (i = 0; i < ТОКЕНЫ.length; i++) {
+      var было = стиль.getPropertyValue(ТОКЕНЫ[i]).trim();
+      if (было) { корень.style.setProperty(ТОКЕНЫ[i], "calc((" + было + ") * " + k + ")"); }
+    }
+  }
+
+  применить();
+
+  if (document.fonts && document.fonts.ready) { document.fonts.ready.then(применить); }
+
+  addEventListener("resize", function () { ждём = ждём || requestAnimationFrame(применить); });
+})();
+</script>
+</head>
+<body class="с-липкой-кнопкой">
+<section class="блок блок--первый-экран первый-экран--свой светлый сторона--слева" id="экран-1" data-тип="первый-экран" data-схема="разворот" data-ключ-макета="светлая" data-картинка="фото">
+  <header class="шапка">
+    <a class="шапка__лого" href="#"><b>Полина Бурковская</b><span class="шапка__роль">Маркетолог онлайн-школ с 2018 года</span></a>
+  </header>
+  <div class="свой__сетка">
+    <figure class="картинка первый-экран__картинка свой__кадр">
+      <picture><source media="(max-width: 899px)" srcset="img/polina-chernoe-lokot-telefon.webp"><img src="img/polina-chernoe-chisto.webp" alt="Полина Бурковская — маркетолог онлайн-школ" data-лицо="50,14" fetchpriority="high"></picture>
+    </figure>
+    <div class="первый-экран__текст свой__текст">
+      <h1>Нахожу, где онлайн-школа <em class="акцент">теряет деньги</em>,<br>и возвращаю <em class="акцент">рост</em></h1>
+      <span class="свой__линия" aria-hidden="true"></span>
+      <p class="лид">Разбираю рекламу, воронки и запуски.<br class="свой__перенос"> Чиню то, что мешает системно расти</p>
+      <div class="первый-экран__действие"><a class="кнопка кнопка--главная" href="https://t.me/polinaburkovskayaa">Обсудить вашу школу</a></div>
+    </div>
+  </div>
+</section>
+<style>
+/* Свой первый экран Полины (решения 07.10.2026): светлый беж, вы слева в светлой арке, крупный текст справа,
+   «и возвращаю рост» — отдельной строкой, кнопка крупная и тёмная. Раскладка своя, токены — из дизайн.md. */
+.первый-экран--свой { position: relative; min-height: 100svh; padding: 0 !important; overflow: hidden;
+  background: linear-gradient(100deg, var(--цвет-фон-2) 0%, var(--цвет-фон) 55%); color: var(--цвет-текст); }
+.первый-экран--свой .шапка { position: absolute; left: 56px; top: 36px; z-index: 5; padding: 0; background: none; border: 0; }
+.первый-экран--свой .шапка__лого { display: grid; gap: 4px; text-decoration: none; color: var(--цвет-текст); }
+.первый-экран--свой .шапка__лого b { font-family: var(--шрифт-заголовков); font-weight: 700; font-size: 18px; }
+.первый-экран--свой .шапка__роль { color: var(--цвет-акцент); font-weight: 600; font-size: 13px; letter-spacing: .06em; text-transform: uppercase; }
+.первый-экран--свой .свой__сетка { display: grid; grid-template-columns: 44% 1fr; min-height: 100svh; }
+.первый-экран--свой .свой__кадр { position: relative; margin: 0; aspect-ratio: auto; background: none; border-radius: 0; box-shadow: none; overflow: visible; }
+.первый-экран--свой .свой__кадр::before { content: ""; position: absolute; left: 50%; bottom: 0; transform: translateX(-50%);
+  width: 78%; height: 80%; border-radius: 999px 999px 0 0; background: var(--цвет-тёплый-мягкий); opacity: .55; }
+.первый-экран--свой .свой__кадр img { position: absolute; left: 50%; bottom: 0; transform: translateX(-50%); height: 88%; width: auto;
+  max-width: none; object-fit: contain; -webkit-mask-image: none; mask-image: none; z-index: 1; }
+.первый-экран--свой .свой__текст { position: relative; z-index: 2; display: flex; flex-direction: column; justify-content: center;
+  gap: clamp(20px, 3.6vh, 32px); padding: clamp(84px, 11vh, 110px) 7vw clamp(28px, 6vh, 72px) 4vw; max-width: none; }
+.первый-экран--свой .свой__текст > * { margin: 0; }
+.первый-экран--свой h1 { font-family: var(--шрифт-заголовков); font-weight: 800; line-height: 1.04; letter-spacing: -.01em;
+  font-size: clamp(40px, min(4.4vw, 7.4vh), 72px); color: var(--цвет-текст); }
+.первый-экран--свой h1 .акцент { font-style: normal; color: var(--цвет-акцент); }
+.первый-экран--свой .свой__линия { display: block; height: 1px; width: 100%; background: color-mix(in srgb, var(--цвет-тёплый) 55%, transparent); }
+.первый-экран--свой .лид { color: var(--цвет-текст-мягкий); font-size: clamp(20px, 1.75vw, 27px); line-height: 1.45; font-weight: 500; max-width: none; }
+.первый-экран--свой .первый-экран__действие { display: flex; }
+.первый-экран--свой .первый-экран__действие .кнопка { --цвет-кнопки: var(--цвет-тёмный-фон); --цвет-на-кнопке: var(--цвет-фон); flex: 1; justify-content: center; white-space: nowrap;
+  font-size: clamp(19px, 1.55vw, 24px); font-weight: 700; padding: 1.25em 2.4em; border-radius: 999px; min-height: 0; }
+@media (max-width: 899px) {
+  .первый-экран--свой { padding-top: 124px !important; padding-bottom: 0 !important; }
+  .первый-экран--свой .шапка { left: 20px; top: 28px; }
+  .первый-экран--свой .шапка__лого { gap: 6px; }
+  .первый-экран--свой .шапка__лого b { font-size: 17px; }
+  .первый-экран--свой .шапка__роль { font-size: 13px; letter-spacing: .03em; }
+  .первый-экран--свой .свой__сетка { display: flex; flex-direction: column; min-height: 0; }
+  .первый-экран--свой .свой__текст { order: -1; padding: 0 20px; gap: 36px; }
+  .первый-экран--свой h1 { font-size: 31px; }
+  .первый-экран--свой .лид { font-size: 18px; }
+  .первый-экран--свой .свой__перенос { display: none; }
+  /* фото целиком, без обрезки: высота кадра по самой картинке, а не по окну */
+  .первый-экран--свой .свой__кадр { height: auto; margin-top: 56px; display: flex; justify-content: center; }
+  .первый-экран--свой .свой__кадр::before { width: 80%; height: 74%; }
+  .первый-экран--свой .свой__кадр picture { display: flex; justify-content: center; width: 100%; position: relative; z-index: 1; }
+  .первый-экран--свой .свой__кадр img { position: static; transform: none; height: auto; width: 78%; max-width: 78%; }
+}
+</style>
+<div class="липкая-кнопка"><a class="кнопка кнопка--главная" href="https://t.me/polinaburkovskayaa">Обсудить вашу школу</a></div>
+<script>
+(function () {
+  var СПИТ = "главная-на-виду";                       // класс на body; правило сна — в стилях
+  var кнопка = document.querySelector(".первый-экран__действие .кнопка--главная");
+  if (!кнопка || !window.IntersectionObserver) { return; }
+
+  function пометить(на_виду) { document.body.classList.toggle(СПИТ, !!на_виду); }
+
+  var б = кнопка.getBoundingClientRect();
+  пометить(б.bottom > 0 && б.top < (window.innerHeight || 0));
+
+  requestAnimationFrame(function () {
+    requestAnimationFrame(function () { document.body.classList.add("панель-с-переходом"); });
+  });
+
+  new IntersectionObserver(function (записи) {
+    пометить(записи[записи.length - 1].isIntersecting);
+  }, { threshold: 0 }).observe(кнопка);
+})();
+</script>
+</body>
+</html>
